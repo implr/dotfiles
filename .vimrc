@@ -7,6 +7,13 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    !mkdir -p ~/.vim/bundle
+    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
 "call pathogen#infect()
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
