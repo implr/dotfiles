@@ -26,6 +26,7 @@ if has('python')
     Bundle 'Valloric/YouCompleteMe'
 endif
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'dag/vim2hs'
 Bundle 'scrooloose/syntastic'
 Bundle 'pbrisbin/html-template-syntax'
 Bundle 'scrooloose/nerdcommenter'
@@ -68,8 +69,8 @@ inoremap <C-U> <C-G>u<C-U>
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   set t_Co=256
-  syntax on
   set hlsearch
+  syntax on
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -95,11 +96,10 @@ if has("autocmd")
 
   augroup END
 
-else
-
-  set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+set autoindent		" always set autoindenting on
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -109,8 +109,6 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-
-"syntax on
 set modeline
 set nu
 set ttyfast

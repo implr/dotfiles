@@ -1,0 +1,9 @@
+[user]
+	email = bartoszstebel@gmail.com
+	name = implr
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
