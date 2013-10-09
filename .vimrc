@@ -22,7 +22,9 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle 'Valloric/YouCompleteMe'
+if has('python')
+    Bundle 'Valloric/YouCompleteMe'
+endif
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'pbrisbin/html-template-syntax'
@@ -30,6 +32,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'jcf/vim-latex'
 Bundle 'tpope/vim-surround'
 Bundle 'tomasr/molokai'
+Bundle 'jpalardy/vim-slime'
 
 filetype plugin indent on
 
