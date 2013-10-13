@@ -34,6 +34,7 @@ Bundle 'jcf/vim-latex'
 Bundle 'tpope/vim-surround'
 Bundle 'tomasr/molokai'
 Bundle 'jpalardy/vim-slime'
+Bundle 'ujihisa/neco-ghc'
 
 filetype plugin indent on
 
@@ -164,3 +165,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['html'] }
 let g:syntastic_python_checkers=['python', 'pyflakes']
+let g:haskell_quasi         = 0
+let g:haskell_interpolation = 0
+let g:haskell_regex         = 0
+let g:haskell_jmacro        = 0
+let g:haskell_shqq          = 0
+let g:haskell_sql           = 0
+let g:haskell_json          = 0
+let g:haskell_xml           = 0
+let g:haskell_hsp = 0
