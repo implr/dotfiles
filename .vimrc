@@ -174,3 +174,9 @@ let g:haskell_sql           = 0
 let g:haskell_json          = 0
 let g:haskell_xml           = 0
 let g:haskell_hsp = 0
+
+let g:haskell_conceal              = 0
+let g:hdevtools_options = '-g-hide-package -gmonads-tf'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_always_populate_location_list = 1
+syntax on
