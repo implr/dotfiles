@@ -11,11 +11,11 @@ let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
-    !mkdir -p ~/.vim/bundle
-    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    !mkdir -p $HOME/.vim/bundle
+    !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
 endif
 "call pathogen#infect()
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -35,6 +35,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tomasr/molokai'
 Bundle 'jpalardy/vim-slime'
 Bundle 'ujihisa/neco-ghc'
+Bundle 'idris-hackers/idris-vim'
 
 filetype plugin indent on
 
@@ -126,6 +127,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 set formatoptions=croqln1
 let mapleader = ","
+let maplocalleader = "\\"
 nnoremap / /\v
 vnoremap / /\v
 set showmode
@@ -146,6 +148,7 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 au Bufenter *.hs compiler ghc
+au Bufenter *.hs syntax on
 let g:haddock_browser = "/usr/bin/opera"
 
 function! SetOIMode()
@@ -165,6 +168,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['html'] }
 let g:syntastic_python_checkers=['python', 'pyflakes']
+let g:syntastic_idris_checkers=[]
 let g:haskell_quasi         = 0
 let g:haskell_interpolation = 0
 let g:haskell_regex         = 0
