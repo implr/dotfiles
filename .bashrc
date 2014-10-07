@@ -13,7 +13,7 @@ fi
 
 # Put your fun stuff here.
 
-PATH="${PATH}:$HOME/bin/:$HOME/.cabal/bin/"
+PATH="$HOME/bin/:$HOME/.cabal/bin/:${PATH}"
 export EDITOR="/usr/bin/vim"
 if [ -f "~/bin/vimpager" ];
 then
