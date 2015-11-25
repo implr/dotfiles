@@ -25,8 +25,8 @@ Bundle 'gmarik/vundle'
 if has('python')
     Bundle 'Valloric/YouCompleteMe'
 endif
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'dag/vim2hs'
+"Bundle 'lukerandall/haskellmode-vim'
+"Bundle 'dag/vim2hs'
 Bundle 'scrooloose/syntastic'
 Bundle 'pbrisbin/html-template-syntax'
 Bundle 'scrooloose/nerdcommenter'
@@ -34,8 +34,12 @@ Bundle 'jcf/vim-latex'
 Bundle 'tpope/vim-surround'
 Bundle 'tomasr/molokai'
 Bundle 'jpalardy/vim-slime'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'idris-hackers/idris-vim'
+
+Bundle 'Shougo/vimproc.vim'
+Bundle 'neovimhaskell/haskell-vim'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'eagletmt/ghcmod-vim'
 
 filetype plugin indent on
 
@@ -147,9 +151,9 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
-au Bufenter *.hs compiler ghc
-au Bufenter *.hs syntax on
-let g:haddock_browser = "/usr/bin/opera"
+"au Bufenter *.hs compiler ghc
+"au Bufenter *.hs syntax on
+"let g:haddock_browser = "/usr/bin/opera"
 
 function! SetOIMode()
     verbose set makeprg=g++\ -ggdb\ -std=c++11\ -Wall\ %\ -o\ %<
@@ -166,20 +170,20 @@ let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
-    \ 'passive_filetypes': ['html'] }
+    \ 'passive_filetypes': ['html', 'haskell'] }
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
-let g:haskell_quasi         = 0
-let g:haskell_interpolation = 0
-let g:haskell_regex         = 0
-let g:haskell_jmacro        = 0
-let g:haskell_shqq          = 0
-let g:haskell_sql           = 0
-let g:haskell_json          = 0
-let g:haskell_xml           = 0
-let g:haskell_hsp = 0
 
-let g:haskell_conceal              = 0
+" neovimhaskell/haskell-vim  (syntax stuff)
+let g:haskell_enable_quantification = 1
+
+" neco-ghc
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+" ---- todo not relevant?
+" Disable haskell-vim omnifunc
+" let g:haskellmode_completion_ghc = 0
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
 let g:hdevtools_options = '-g-hide-package -gmonads-tf'
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
