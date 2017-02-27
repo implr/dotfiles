@@ -13,7 +13,7 @@ fi
 
 # Put your fun stuff here.
 
-PATH="$HOME/bin/:$HOME/.cabal/bin/:${PATH}"
+PATH="$HOME/bin/:$HOME/.local/bin/:$HOME/.cabal/bin/:${PATH}"
 export EDITOR="/usr/bin/vim"
 if [ -f "~/bin/vimpager" ];
 then
@@ -22,3 +22,11 @@ then
     alias zless=$PAGER
 fi
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export GOPATH=$HOME/go;
+export PATH="$GOPATH/bin:$PATH:";
+
+alias shitssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss"
+
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
