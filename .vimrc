@@ -58,6 +58,8 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 "set hlsearch
+set so=5
+set magic
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -132,8 +134,8 @@ nnoremap <C-l> <C-w>l
 set formatoptions=croqln1
 let mapleader = ","
 let maplocalleader = "\\"
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 set showmode
 noremap <Leader>R :RainbowParenthesesToggle<CR>
 set laststatus=2
