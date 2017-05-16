@@ -59,7 +59,6 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-"set hlsearch
 set so=5
 set magic
 
@@ -122,7 +121,6 @@ endif
 set modeline
 set nu
 set ttyfast
-"set relativenumber
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -157,7 +155,6 @@ let xml_syntax_folding=1      " XML
 
 "au Bufenter *.hs compiler ghc
 "au Bufenter *.hs syntax on
-"let g:haddock_browser = "/usr/bin/opera"
 
 function! SetOIMode()
     verbose set makeprg=g++\ -ggdb\ -std=c++11\ -Wall\ %\ -o\ %<
