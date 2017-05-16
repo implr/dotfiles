@@ -11,30 +11,32 @@ let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
-    !mkdir -p $HOME/.vim/bundle
+    !mkdir -p ~/.vim/bundle
     !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
 endif
 "call pathogen#infect()
-set rtp+=$HOME/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 if has('python')
-    Bundle 'Valloric/YouCompleteMe'
+    Plugin 'Valloric/YouCompleteMe'
 endif
-"Bundle 'lukerandall/haskellmode-vim'
-"Bundle 'dag/vim2hs'
-Bundle 'scrooloose/syntastic'
-Bundle 'pbrisbin/html-template-syntax'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jcf/vim-latex'
-Bundle 'tpope/vim-surround'
-Bundle 'tomasr/molokai'
-Bundle 'jpalardy/vim-slime'
-Bundle 'idris-hackers/idris-vim'
+"Plugin 'lukerandall/haskellmode-vim'
+"Plugin 'dag/vim2hs'
+Plugin 'scrooloose/syntastic'
+Plugin 'pbrisbin/html-template-syntax'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'gerw/vim-latex-suite'
+Plugin 'tpope/vim-surround'
+Plugin 'tomasr/molokai'
+Plugin 'jpalardy/vim-slime'
+Plugin 'idris-hackers/idris-vim'
+Plugin 'rust-lang/rust.vim'
 
 Bundle 'Shougo/vimproc.vim'
 Bundle 'neovimhaskell/haskell-vim'
@@ -143,7 +145,7 @@ au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magent
 au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
 set smartcase
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=99
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP
@@ -173,6 +175,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['html', 'haskell'] }
+let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
 
@@ -190,3 +193,5 @@ let g:hdevtools_options = '-g-hide-package -gmonads-tf'
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 syntax on
+nnoremap <leader>t :GhcModType<return>
+nnoremap <leader>T :GhcModTypeInsert<return>
