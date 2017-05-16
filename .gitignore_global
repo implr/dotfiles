@@ -41,3 +41,7 @@ Thumbs.db
 *.pyc
 
 *~
+
+*.gch
+.gdb_history
+peda-session-*.txt
