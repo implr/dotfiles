@@ -16,7 +16,7 @@ if !filereadable(vundle_readme)
 endif
 "call pathogen#infect()
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
@@ -38,10 +38,11 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'rust-lang/rust.vim'
 
-Bundle 'Shougo/vimproc.vim'
-Bundle 'neovimhaskell/haskell-vim'
-Bundle 'ujihisa/neco-ghc'
-Bundle 'eagletmt/ghcmod-vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'ujihisa/neco-ghc'
+Plugin 'bitc/vim-hdevtools'
+call vundle#end()
 
 filetype plugin indent on
 
@@ -171,13 +172,14 @@ let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
-    \ 'passive_filetypes': ['html', 'haskell'] }
+    \ 'passive_filetypes': ['html'] }
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
 
 " neovimhaskell/haskell-vim  (syntax stuff)
 let g:haskell_enable_quantification = 1
+let g:haskell_indent_before_where = 2
 
 " neco-ghc
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -190,5 +192,9 @@ let g:hdevtools_options = '-g-hide-package -gmonads-tf'
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 syntax on
-nnoremap <leader>t :GhcModType<return>
-nnoremap <leader>T :GhcModTypeInsert<return>
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse = 1
+au FileType haskell nnoremap <buffer> <leader>t :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <leader>T :HdevtoolsClear<CR>
+
+set guioptions-=T
