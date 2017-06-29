@@ -22,7 +22,7 @@ call vundle#begin()
 " required! 
 Plugin 'gmarik/vundle'
 
-if has('python')
+if has('python3')
     Plugin 'Valloric/YouCompleteMe'
 endif
 "Plugin 'lukerandall/haskellmode-vim'
@@ -198,3 +198,4 @@ au FileType haskell nnoremap <buffer> <leader>t :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <leader>T :HdevtoolsClear<CR>
 
 set guioptions-=T
+let g:ctrlp_max_files=0
