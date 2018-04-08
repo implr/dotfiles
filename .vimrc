@@ -22,7 +22,7 @@ call vundle#begin()
 " required! 
 Plugin 'gmarik/vundle'
 
-if has('python3')
+if has('python3') || has('python')
     Plugin 'Valloric/YouCompleteMe'
 endif
 "Plugin 'lukerandall/haskellmode-vim'
@@ -42,6 +42,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'ujihisa/neco-ghc'
 Plugin 'bitc/vim-hdevtools'
+Plugin 'hashivim/vim-terraform'
+Plugin 'saltstack/salt-vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -186,9 +188,8 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " ---- todo not relevant?
 " Disable haskell-vim omnifunc
 " let g:haskellmode_completion_ghc = 0
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
-let g:hdevtools_options = '-g-hide-package -gmonads-tf'
+"let g:hdevtools_options = '-g-hide-package -gmonads-tf'
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 syntax on
