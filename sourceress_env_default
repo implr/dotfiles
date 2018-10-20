@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/bartek/dev/sourceress/
+cd $HOME/dev/sourceress/
 . venv/bin/activate
 cd sourceress
 source scripts/use_environment.sh default
