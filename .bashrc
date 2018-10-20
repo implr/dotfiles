@@ -31,10 +31,6 @@ alias shitssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorith
 
 . /home/bartek/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/bartek/google-cloud-sdk/path.bash.inc ]; then
   source '/home/bartek/google-cloud-sdk/path.bash.inc'

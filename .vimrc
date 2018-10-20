@@ -175,7 +175,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['html'] }
-let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_python_exec = 'python'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
 
