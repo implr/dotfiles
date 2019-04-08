@@ -178,6 +178,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_python_python_exec = 'python'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
+let g:syntastic_rust_checkers=[]
+
+let g:syntastic_asm_dialect="intel"
 
 " neovimhaskell/haskell-vim  (syntax stuff)
 let g:haskell_enable_quantification = 1
