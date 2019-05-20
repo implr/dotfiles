@@ -203,3 +203,5 @@ au FileType haskell nnoremap <buffer> <silent> <leader>T :HdevtoolsClear<CR>
 
 set guioptions-=T
 let g:ctrlp_max_files=0
+let g:Tex_AdvancedMath = 1
+set winaltkeys=no
