@@ -34,3 +34,4 @@ fi
 if [ -f $HOME/google-cloud-sdk/completion.bash.inc ]; then
   source "$HOME/google-cloud-sdk/completion.bash.inc"
 fi
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
