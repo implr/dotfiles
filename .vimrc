@@ -121,7 +121,7 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-set modeline
+set nomodeline
 set nu
 set ttyfast
 set shiftwidth=4

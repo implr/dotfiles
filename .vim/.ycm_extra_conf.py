@@ -181,7 +181,7 @@ def PythonSysPath( **kwargs ):
 
   sys_path.insert( 0, DIR_OF_THIS_SCRIPT )
 
-  for folder in os.listdir( DIR_OF_THIRD_PARTY ):
+  for folder in (os.listdir( DIR_OF_THIRD_PARTY ) if os.path.exists(DIR_OF_THIRD_PARTY) else []):
     if folder == 'python-future':
       folder = os.path.join( folder, 'src' )
       sys_path.insert( GetStandardLibraryIndexInSysPath( sys_path ) + 1,
