@@ -37,6 +37,7 @@ Plugin 'tomasr/molokai'
 Plugin 'jpalardy/vim-slime'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'qnighy/lalrpop.vim'
 
 Plugin 'Shougo/vimproc.vim'
 Plugin 'neovimhaskell/haskell-vim'
