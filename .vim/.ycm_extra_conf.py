@@ -57,13 +57,13 @@ flags = [
 '-x',
 'c++',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.0/include/g++-v8',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/g++-v9',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.0/include/g++-v8/x86_64-pc-linux-gnu',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/g++-v9/x86_64-pc-linux-gnu',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.0/include/g++-v8/backward',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/g++-v9/backward',
 '-isystem',
-'/usr/lib64/llvm/7/bin/../../../../lib/clang/7.0.0/include',
+'/usr/lib64/llvm/8/bin/../../../../lib/clang/8.0.1/include',
 '-isystem',
 '/usr/include',
 '-I',
@@ -74,7 +74,7 @@ flags = [
 # which is required for compiling the standard library, and to 'c++11' for older
 # versions.
 if platform.system() != 'Windows':
-  flags.append( '-std=c++11' )
+  flags.append( '-std=gnu++14' )
 
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
