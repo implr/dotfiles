@@ -13,7 +13,7 @@ fi
 
 # Put your fun stuff here.
 
-PATH="$HOME/bin/:$HOME/.local/bin/:$HOME/.cabal/bin/:${PATH}"
+PATH="$HOME/bin/:$HOME/.local/bin/:$HOME/.cabal/bin/:$HOME/.cargo/bin/:${PATH}"
 export EDITOR="/usr/bin/vim"
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export GOPATH=$HOME/go

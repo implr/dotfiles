@@ -23,7 +23,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 if has('python3') || has('python')
-    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'ycm-core/YouCompleteMe'
 endif
 "Plugin 'lukerandall/haskellmode-vim'
 "Plugin 'dag/vim2hs'
@@ -39,6 +39,7 @@ Plugin 'idris-hackers/idris-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'qnighy/lalrpop.vim'
 Plugin 'google/vim-jsonnet'
+Plugin 'LnL7/vim-nix'
 
 Plugin 'Shougo/vimproc.vim'
 Plugin 'neovimhaskell/haskell-vim'
@@ -46,6 +47,7 @@ Plugin 'ujihisa/neco-ghc'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'hashivim/vim-terraform'
 Plugin 'saltstack/salt-vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 
 filetype plugin indent on
@@ -97,7 +99,7 @@ if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
   
-  au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 foldmethod=indent
+  "au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 foldmethod=indent
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -180,7 +182,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_python_python_exec = 'python'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
-"let g:syntastic_rust_checkers=[]
+let g:syntastic_rust_checkers=[]
 
 let g:syntastic_asm_dialect="intel"
 
@@ -207,3 +209,5 @@ set guioptions-=T
 let g:ctrlp_max_files=0
 let g:Tex_AdvancedMath = 1
 set winaltkeys=no
+
+let g:indent_guides_enable_on_vim_startup = 1
