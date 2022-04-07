@@ -29,7 +29,7 @@ endif
 "Plugin 'dag/vim2hs'
 Plugin 'scrooloose/syntastic'
 Plugin 'pbrisbin/html-template-syntax'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'preservim/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gerw/vim-latex-suite'
 Plugin 'tpope/vim-surround'
@@ -182,7 +182,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_python_python_exec = 'python'
 let g:syntastic_python_checkers=['python', 'pyflakes']
 let g:syntastic_idris_checkers=[]
-let g:syntastic_rust_checkers=[]
+let g:syntastic_latex_checkers=[]
+let g:syntastic_tex_checkers=[]
+"let g:syntastic_rust_checkers=[]
 
 let g:syntastic_asm_dialect="intel"
 

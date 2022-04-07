@@ -21,13 +21,13 @@ export PATH="$GOPATH/bin:${PATH}"
 
 export PATH="/opt/chefdk/bin:${PATH}"
 
-alias shitssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss"
+alias shitssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss,ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa"
 
 . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/bartek/google-cloud-sdk/path.bash.inc' ]; then . '/home/bartek/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/home/implr/google-cloud-sdk/path.bash.inc' ]; then . '/home/implr/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/bartek/google-cloud-sdk/completion.bash.inc' ]; then . '/home/bartek/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/home/implr/google-cloud-sdk/completion.bash.inc' ]; then . '/home/implr/google-cloud-sdk/completion.bash.inc'; fi
